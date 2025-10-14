@@ -93,6 +93,16 @@
       enable = true;
     };
     firefox.enable = true;
+    steam = {
+      enable = true;
+      # remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+      # dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    };
+  };
+  programs.git.config={
+    init.defaultbranch="main";
+    user.email="omarelfouly29@gmail.com";
+    user.name="OmarElfouly";
   };
   # Install firefox.
   # programs.firefox.enable = true;
