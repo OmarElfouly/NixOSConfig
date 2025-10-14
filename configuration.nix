@@ -117,6 +117,11 @@
   #  wget
     neovim
     git
+    gh
+    qalculate-gtk
+    # gnomeExtensions.clipboard-history
+    zed-editor
+    vlc
   ];
 
 
