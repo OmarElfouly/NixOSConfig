@@ -162,7 +162,7 @@
     }
   ];
 
-  fonts.fonts = with pkgs;[
+  fonts.packages = with pkgs;[
     nerd-fonts.jetbrains-mono
   ];
   # Some programs need SUID wrappers, can be configured further or are
