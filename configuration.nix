@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      <home-manager/nixos>
     ];
 
   # Bootloader.
@@ -91,48 +92,42 @@
     isNormalUser = true;
     description = "miro";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    #  thunderbird
-    ];
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  programs = {
-    fish = {
-      enable = true;
-    };
-    firefox.enable = true;
-    steam = {
-      enable = true;
-      # remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-      # dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-    };
-  };
-
-  programs.git.config={
-    init.defaultbranch="main";
-    user.email="omarelfouly29@gmail.com";
-    user.name="OmarElfouly";
-  };
-  # Install firefox.
-  # programs.firefox.enable = true;
-
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  # programs = {
+  #   fish = {
+  #     enable = true;
+  #   };
+  #   firefox.enable = true;
+  #   steam = {
+  #     enable = true;
+  #     # remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+  #     # dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  #   };
+  # };
+
+  # programs.git.config={
+  #   init.defaultbranch="main";
+  #   user.email="omarelfouly29@gmail.com";
+  #   user.name="OmarElfouly";
+  # };
+
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    # wget
-    neovim
+    wget
     git
-    gh
-    qalculate-gtk
-    gnomeExtensions.clipboard-indicator
-    zed-editor
-    vlc
+    # neovim
+    # gh
+    # qalculate-gtk
+    # gnomeExtensions.clipboard-indicator
+    # zed-editor
+    # vlc
   ];
 
   xdg.mime.defaultApplications = {
@@ -144,27 +139,32 @@
     VISUAL = "zeditor";
   };
 
-  programs.dconf.profiles.user.databases = [
-    {
-      settings = {
-        "org/gnome/shell" = {
-          enabled-extensions = [
-            pkgs.gnomeExtensions.clipboard-indicator.extensionUuid
-          ];
-        };
+  # programs.dconf.profiles.user.databases = [
+  #   {
+  #     settings = {
+  #       "org/gnome/shell" = {
+  #         enabled-extensions = [
+  #           pkgs.gnomeExtensions.clipboard-indicator.extensionUuid
+  #         ];
+  #       };
 
-      # 2. Configure the extension's specific settings
-        #  "org/gnome/shell/extensions/clipboard-indicator" = {
-          #  history-size = 50;
-          #  preview-size = 40;
-        #  };
-      };
-    }
-  ];
+  #     # 2. Configure the extension's specific settings
+  #       #  "org/gnome/shell/extensions/clipboard-indicator" = {
+  #         #  history-size = 50;
+  #         #  preview-size = 40;
+  #       #  };
+  #     };
+  #   }
+  # ];
 
-  fonts.packages = with pkgs;[
-    nerd-fonts.jetbrains-mono
-  ];
+  # fonts.packages = with pkgs;[
+  #   nerd-fonts.jetbrains-mono
+  # ];
+
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
+  home-manager.users.miro = import ./home.nix;
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
