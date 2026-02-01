@@ -46,16 +46,24 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
+
+  # --- Key Remapping for Wayland, X11, and Console ---
+  # The old services.xserver.xkb method only works for X11.
+  # This udev hardware database rule remaps the keys at a lower level,
+  # making it work everywhere.
+  services.udev.extraHwdb = ''
+    evdev:atkbd:dmi:bvn*:bvr*:bd*:svn*:pn*:pvr*
+     KEYBOARD_KEY_3a=esc
+     KEYBOARD_KEY_1=capslock
+  '';
 
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
     variant = "";
-    options = "caps:swapescape";
   };
-  console.useXkbConfig = true;
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
