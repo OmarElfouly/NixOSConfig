@@ -109,6 +109,7 @@
       # dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     };
   };
+
   programs.git.config={
     init.defaultbranch="main";
     user.email="omarelfouly29@gmail.com";
@@ -123,17 +124,43 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    # wget
     neovim
     git
     gh
     qalculate-gtk
-    # gnomeExtensions.clipboard-history
+    gnomeExtensions.clipboard-indicator
     zed-editor
     vlc
   ];
 
+  xdg.mime.defaultApplications = {
+    "video/*" = "vlc.desktop";
+  };
+
+  environment.variables = {
+    EDITOR = "vim";
+    VISUAL = "zeditor";
+  };
+
+  programs.dconf.profiles.user.databases = [
+    {
+      settings = {
+        "org/gnome/shell" = {
+          enabled-extensions = [
+            pkgs.gnomeExtensions.clipboard-indicator.extensionUuid
+          ];
+        };
+
+      # 2. Configure the extension's specific settings
+        #  "org/gnome/shell/extensions/clipboard-indicator" = {
+          #  history-size = 50;
+          #  preview-size = 40;
+        #  };
+      };
+    }
+  ];
 
   fonts.fonts = with pkgs;[
     nerd-fonts.jetbrains-mono
