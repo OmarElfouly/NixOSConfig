@@ -12,6 +12,7 @@
     zed-editor
     vlc
     qalculate-gtk
+    bitwarden-desktop
 
     # CLI Tools
     neovim
