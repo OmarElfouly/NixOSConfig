@@ -49,9 +49,9 @@
   # Git Configuration
   programs.git = {
     enable = true;
-    userName = "OmarElfouly";
-    userEmail = "omarelfouly29@gmail.com";
-    extraConfig = {
+    settings = {
+      user.name = "OmarElfouly";
+      user.email = "omarelfouly29@gmail.com";
       init.defaultBranch = "main";
     };
   };
