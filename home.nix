@@ -13,7 +13,8 @@
     vlc
     qalculate-gtk
     bitwarden-desktop
-    logseq
+    gimp
+    obsidian
 
     # CLI Tools
     neovim
