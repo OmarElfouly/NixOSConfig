@@ -125,7 +125,6 @@
     # neovim
     # gh
     # qalculate-gtk
-    # gnomeExtensions.clipboard-indicator
     # zed-editor
     # vlc
   ];

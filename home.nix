@@ -22,6 +22,9 @@
     # Fonts
     nerd-fonts.jetbrains-mono
 
+    # Gnome Extensions
+    gnomeExtensions.clipboard-indicator
+
     # --- RStudio (IDE) ---
     # We wrap RStudio so it sees the packages we need.
     (rstudioWrapper.override {
@@ -56,9 +59,9 @@
   # Shell Configuration (Fish)
   programs.fish = {
     enable = true;
-    interactiveShellInit = ''
-      set fish_greeting # Disable greeting
-    '';
+    # interactiveShellInit = ''
+    #   set fish_greeting # Disable greeting
+    # '';
     shellAliases = {
       nix-new = "nix flake new -t github:nix-community/nix-direnv .";
     };
