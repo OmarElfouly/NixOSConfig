@@ -92,15 +92,14 @@
     isNormalUser = true;
     description = "miro";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.fish;
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
+  programs.fish.enable = true;
   # programs = {
-  #   fish = {
-  #     enable = true;
-  #   };
   #   firefox.enable = true;
   #   steam = {
   #     enable = true;
