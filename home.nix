@@ -16,7 +16,7 @@
 
     # CLI Tools
     neovim
-    gh
+    # gh
     ripgrep # Faster grep, highly recommended
 
     # Fonts
