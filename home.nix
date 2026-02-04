@@ -27,14 +27,14 @@
 
     # --- RStudio (IDE) ---
     # We wrap RStudio so it sees the packages we need.
-    (rstudioWrapper.override {
-      packages = with rPackages; [
-        ggplot2
-        dplyr
-        xts
-        tidyverse
-      ];
-    })
+    # (rstudioWrapper.override {
+    #   packages = with rPackages; [
+    #     ggplot2
+    #     dplyr
+    #     xts
+    #     tidyverse
+    #   ];
+    # })
   ];
 
   # --- Program Configuration ---
