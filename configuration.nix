@@ -122,6 +122,7 @@
     wget
     git
     gh
+    nix-output-monitor
     # neovim
     # gh
     # qalculate-gtk
