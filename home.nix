@@ -15,6 +15,7 @@
     bitwarden-desktop
     gimp
     obsidian
+    rustdesk
 
     # CLI Tools
     neovim
