@@ -43,6 +43,9 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
+  system.autoUpgrade.enable = true;
+  system.autoUpgrade.allowReboot = true;
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
