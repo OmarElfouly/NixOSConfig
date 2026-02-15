@@ -19,6 +19,9 @@
 
     # CLI Tools
     neovim
+    htop
+    nethogs
+
     # gh
     ripgrep # Faster grep, highly recommended
 
@@ -67,6 +70,7 @@
     # '';
     shellAliases = {
       nix-new = "nix flake new -t github:nix-community/nix-direnv .";
+      nethogs = "sudo ${pkgs.nethogs}/bin/nethogs";
     };
   };
 
