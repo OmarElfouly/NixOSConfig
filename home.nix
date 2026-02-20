@@ -34,7 +34,26 @@
     nil
   ];
 
+  # --- Services ---
+
+  services.ssh-agent.enable = true;
+
   # --- Program Configuration ---
+
+  # SSH
+  programs.ssh = {
+    enable = true;
+
+    matchBlocks = {
+      "thesisr" = {
+        hostname = "100.91.26.65";
+        user = "omar";
+        forwardAgent = true;
+        identityFile = "~/.ssh/id_ed25519";
+        addKeysToAgent = "yes";
+      };
+    };
+  };
 
   # Enable Direnv (Project Isolation)
   # When you 'cd' into a folder with a flake.nix, it loads automatically.
