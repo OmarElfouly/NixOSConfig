@@ -9,6 +9,7 @@
     # Desktop Apps
     firefox
     chromium
+    google-chrome
     zed-editor
     vlc
     qalculate-gtk
@@ -32,6 +33,14 @@
     gnomeExtensions.clipboard-indicator
 
     nil
+    nixd
+
+    rclone
+
+    texlive.combined.scheme-full
+
+    docker
+    act
   ];
 
   # --- Services ---
@@ -53,6 +62,13 @@
         addKeysToAgent = "yes";
       };
     };
+  };
+
+  programs.vscode = {
+    enable = true;
+    profiles.default.extensions = with pkgs.vscode-extensions; [
+      vscodevim.vim
+    ];
   };
 
   # Enable Direnv (Project Isolation)
