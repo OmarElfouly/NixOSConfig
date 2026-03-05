@@ -5,11 +5,11 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      <home-manager/nixos>
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    <home-manager/nixos>
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -111,11 +111,18 @@
   users.users.miro = {
     isNormalUser = true;
     description = "miro";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+    ];
     shell = pkgs.fish;
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   nixpkgs.config.allowUnfree = true;
 
   programs.fish.enable = true;
@@ -134,7 +141,6 @@
   #   user.name="OmarElfouly";
   # };
 
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -149,6 +155,9 @@
     # zed-editor
     # vlc
   ];
+
+  virtualisation.docker.enable = true;
+  virtualisation.docker.rootless.enable = true;
 
   xdg.mime.defaultApplications = {
     "video/*" = "vlc.desktop";
