@@ -22,6 +22,7 @@
     neovim
     htop
     nethogs
+    claude-code
 
     # gh
     ripgrep # Faster grep, highly recommended
@@ -39,7 +40,6 @@
 
     texlive.combined.scheme-full
 
-    docker
     act
   ];
 
