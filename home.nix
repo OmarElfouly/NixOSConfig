@@ -60,6 +60,10 @@
         forwardAgent = true;
         identityFile = "~/.ssh/id_ed25519";
         addKeysToAgent = "yes";
+        # extraOptions = {
+        #   RequestTTY = "yes";
+        #   RemoteCommand = "tmux new-session -A -s dev";
+        # };
       };
     };
   };
