@@ -23,6 +23,7 @@
     htop
     nethogs
     claude-code
+    tmux
 
     # gh
     ripgrep # Faster grep, highly recommended
