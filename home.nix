@@ -22,6 +22,7 @@
     neovim
     htop
     nethogs
+    glances
     claude-code
     tmux
 
@@ -36,6 +37,7 @@
 
     nil
     nixd
+    ruff
 
     rclone
 
