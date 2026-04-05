@@ -23,7 +23,7 @@
     htop
     nethogs
     glances
-    claude-code
+    # claude-code # TODO: Temp brocken after leak :(
     tmux
 
     # gh
@@ -104,6 +104,7 @@
     shellAliases = {
       nix-new = "nix flake new -t github:nix-community/nix-direnv .";
       nethogs = "sudo ${pkgs.nethogs}/bin/nethogs";
+      claude = "nix run github:ryoppippi/nix-claude-code --"; # TODO: delete when claude fixes
     };
   };
 
