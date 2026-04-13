@@ -68,6 +68,12 @@
         #   RemoteCommand = "tmux new-session -A -s dev";
         # };
       };
+      "cobalt" = {
+        hostname = "100.87.130.60";
+        user = "miro";
+        forwardAgent = true;
+        addKeysToAgent = "yes";
+      };
     };
   };
 
