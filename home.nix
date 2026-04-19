@@ -8,6 +8,7 @@
   home.packages = with pkgs; [
     # Desktop Apps
     firefox
+    spotify
     chromium
     google-chrome
     zed-editor
