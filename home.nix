@@ -25,6 +25,7 @@
     nethogs
     glances
     zip
+    unzip
     # claude-code # TODO: Temp brocken after leak :(
     tmux
 
