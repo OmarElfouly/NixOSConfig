@@ -203,6 +203,8 @@
   # };
 
   # List services that you want to enable:
+  services.resolved.enable = true;
+  services.mullvad-vpn.enable = true;
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
