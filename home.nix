@@ -20,6 +20,10 @@
     rustdesk
 
     # CLI Tools
+    zoxide
+    eza
+    bat
+    fd
     tldr
     neovim
     htop
