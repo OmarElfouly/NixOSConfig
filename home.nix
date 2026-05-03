@@ -20,6 +20,7 @@
     rustdesk
 
     # CLI Tools
+    tldr
     neovim
     htop
     nethogs
